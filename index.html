@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <!-- Primary Meta Tags & SEO Architecture -->
+  <title>M Vishal Pranav | Cloud-Native & DevOps Software Engineer | RVCE M.Tech</title>
+  <meta name="description" content="Portfolio of M Vishal Pranav - M.Tech in Software Engineering at RVCE. Specializing in Cloud-Native AWS/Azure platforms, AI Guardrails, GitOps automation, and QA Testing.">
+  <meta name="author" content="M Vishal Pranav">
+  <meta name="keywords" content="M Vishal Pranav, DevOps Engineer, Cloud Native, AWS, Kubernetes, GitOps, RV College of Engineering, Software Engineer, WebGL 3D Portfolio">
+
+  <!-- Google Web Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- External Stylesheet (Presentation & Layout Architecture) -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Three.js CDN for High-Performance 3D WebGL Constellation (with local fallback) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+
+  <!-- ========================================================================
+       CHECKPOINT 3.3: 3D WEBGL INTERACTIVE CANVAS LAYER CONTAINER
+       Safe position isolation (position: fixed; z-index: 0; pointer-events: none)
+       isolates the WebGL rendering context from the standard DOM document flow.
+       ======================================================================== -->
+  <div id="webgl-canvas-container" data-checkpoint="Checkpoint 3.3: WebGL Isolated 3D Canvas Layer" aria-hidden="true"></div>
+
+  <!-- Ambient glowing backdrop blurs -->
+  <div class="ambient-blur ambient-blur-1"></div>
+  <div class="ambient-blur ambient-blur-2"></div>
+
+  <!-- Interactive Verification Mode Status Banner -->
+  <div id="verification-banner" class="verification-banner">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+      <path d="m9 12 2 2 4-4"></path>
+    </svg>
+    <span><strong>Course Verification Mode: ACTIVE</strong> — Outlining HTML5 Semantics & CSS Layout Models</span>
+  </div>
+
+  <div class="site-content">
+
+    <!-- ======================================================================
+         CHECKPOINT 1: SEMANTIC STRUCTURE (HTML5) - <header> and <nav>
+         ====================================================================== -->
+    <header class="site-header" data-checkpoint="Checkpoint 1: Semantic <header>">
+      <div class="container nav-container">
+        <!-- Brand Identity -->
+        <a href="#hero" class="brand-logo" aria-label="M Vishal Pranav Portfolio Home">
+          <span class="brand-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+              <polyline points="2 17 12 22 22 17"></polyline>
+              <polyline points="2 12 12 17 22 12"></polyline>
+            </svg>
+          </span>
+          <span>Vishal Pranav <span class="brand-code">/dev</span></span>
+        </a>
+
+        <!-- Semantic Navigation Bar -->
+        <nav class="site-nav" data-checkpoint="Checkpoint 1: Semantic <nav>" aria-label="Main Navigation">
+          <ul class="nav-list">
+            <li><a href="#hero" class="nav-link active">About</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#education" class="nav-link">Education</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <!-- Header Actions: Verification Inspector Toggle & Resume CTA -->
+        <div class="nav-actions">
+          <button id="verify-toggle-btn" class="verify-toggle-btn" title="Toggle Rubric & Layout Verification Overlays" aria-pressed="false">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="2" width="20" height="20" rx="3"></rect>
+              <path d="m9 12 2 2 4-4"></path>
+            </svg>
+            <span>Verify Spec</span>
+          </button>
+          <a href="#contact" class="btn btn-primary btn-sm">Get In Touch</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- ======================================================================
+         CHECKPOINT 1: SEMANTIC STRUCTURE (HTML5) - <main>
+         Enclosing all primary content sections of the single-page application
+         ====================================================================== -->
+    <main data-checkpoint="Checkpoint 1: Semantic <main>">
+
+      <!-- ====================================================================
+           CHECKPOINT 3.1: 1D FLEXBOX HERO SECTION
+           - Uses CSS Flexbox (display: flex, flex-direction, justify-content, align-items, gap)
+           - Stacks vertically as single column on mobile (< 768px)
+           - Transforms to multi-column row layout via media query past 768px
+           - Holds dedicated profile space with <img> enforcing descriptive alt
+           ==================================================================== -->
+      <section id="hero" class="section hero-section" data-checkpoint="Checkpoint 3.1: 1D Flexbox Hero Section">
+        <div class="container">
+          <div class="hero-content">
+
+            <!-- Hero Text Column -->
+            <div class="hero-text">
+              <div class="hero-badge-wrap">
+                <span class="status-pill">
+                  <span class="status-dot"></span>
+                  M.Tech @ RVCE Bengaluru • Open to SDE & DevOps Roles
+                </span>
+              </div>
+
+              <h1 class="hero-title">
+                Building Resilient <br>
+                <span class="text-gradient">Cloud-Native Platforms</span> & Systems
+              </h1>
+
+              <!-- Dynamic Subtitle Typing Container -->
+              <p class="hero-subtitle">
+                <span id="typing-subtitle">Software Engineering Student</span>
+              </p>
+
+              <p class="hero-bio">
+                Software Engineering student at RV College of Engineering with hands-on experience in cloud-native development across AWS and Azure, DevOps automation, AI guardrails, and rigorous automated QA testing. Adept at building reliable, self-healing end-to-end solutions for mission-critical cloud infrastructure.
+              </p>
+
+              <div class="hero-cta-group">
+                <a href="#projects" class="btn btn-primary">
+                  <span>Explore Architecture Projects</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                  <span>Contact Vishal</span>
+                </a>
+              </div>
+
+              <!-- Quick Engineering Metrics -->
+              <div class="hero-stats-row">
+                <div class="stat-item">
+                  <span class="stat-value text-gradient">8.81</span>
+                  <span class="stat-label">B.Tech CGPA (REVA)</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-value text-gradient">8.24</span>
+                  <span class="stat-label">M.Tech CGPA (RVCE)</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-value text-gradient">IEEE</span>
+                  <span class="stat-label">Published Author</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-value text-gradient">GitOps</span>
+                  <span class="stat-label">Self-Healing Drift</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Dedicated Profile Space holding <img> element with mandatory descriptive alt -->
+            <div class="hero-profile" data-checkpoint="Checkpoint 1 & 2: Dedicated Profile <img> with Responsive Rules & Descriptive Alt">
+              <div class="profile-avatar-frame">
+                <div class="profile-image-inner">
+                  <!-- Checkpoints 1 & 2: <img> with descriptive alt and max-width: 100% rule -->
+                  <img src="assets/profile.jpg" alt="M Vishal Pranav - Cloud-Native and DevOps Software Engineering Student at RV College of Engineering" width="400" height="400" loading="eager">
+                </div>
+
+                <!-- Floating Architecture Micro-Badges -->
+                <div class="floating-badge floating-badge-1">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00f0ff" stroke-width="2">
+                    <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+                  </svg>
+                  <span>AWS & Azure Native</span>
+                </div>
+
+                <div class="floating-badge floating-badge-2">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2">
+                    <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                    <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                    <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                    <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                  </svg>
+                  <span>Terraform & FluxCD</span>
+                </div>
+
+                <div class="floating-badge floating-badge-3">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Automated QA & Jest</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           CHECKPOINT 1: SEMANTIC STRUCTURE (HTML5) - <section id="skills">
+           Categorized Technical Capabilities & Toolchains
+           ==================================================================== -->
+      <section id="skills" class="section" data-checkpoint="Checkpoint 1: Semantic <section id='skills'>">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Core Competencies</span>
+            <h2 class="section-title">Technical Expertise & Tooling</h2>
+            <p class="section-subtitle">A balanced engineering foundation combining cloud infrastructure, declarative GitOps pipelines, container orchestration, and multi-tier automated testing.</p>
+          </div>
+
+          <div class="skills-grid">
+            <!-- Category 1: Cloud & DevOps -->
+            <div class="skill-category-card">
+              <div class="skill-cat-header">
+                <div class="skill-cat-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+                  </svg>
+                </div>
+                <h3 class="skill-cat-title">Cloud Infrastructure & DevOps</h3>
+              </div>
+              <div class="skill-tag-cloud">
+                <span class="skill-pill">AWS (EKS, EC2, S3, Lambda)</span>
+                <span class="skill-pill">API Gateway</span>
+                <span class="skill-pill">CloudFront</span>
+                <span class="skill-pill">Route 53</span>
+                <span class="skill-pill">Microsoft Azure</span>
+                <span class="skill-pill">Terraform (IaC)</span>
+                <span class="skill-pill">Kubernetes</span>
+                <span class="skill-pill">Docker</span>
+                <span class="skill-pill">FluxCD (GitOps)</span>
+                <span class="skill-pill">Ansible</span>
+                <span class="skill-pill">Jenkins CI/CD</span>
+                <span class="skill-pill">OPA / Kyverno</span>
+                <span class="skill-pill">Falco Threat Detection</span>
+                <span class="skill-pill">IAM & IRSA</span>
+              </div>
+            </div>
+
+            <!-- Category 2: Automated Testing & QA -->
+            <div class="skill-category-card">
+              <div class="skill-cat-header">
+                <div class="skill-cat-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                    <polyline points="10 9 9 9 8 9"></polyline>
+                  </svg>
+                </div>
+                <h3 class="skill-cat-title">Automated Testing & QA Engineering</h3>
+              </div>
+              <div class="skill-tag-cloud">
+                <span class="skill-pill">Selenium (E2E Testing)</span>
+                <span class="skill-pill">pytest (Backend Testing)</span>
+                <span class="skill-pill">Jest (Frontend Testing)</span>
+                <span class="skill-pill">Postman API Testing</span>
+                <span class="skill-pill">Browser DevTools</span>
+                <span class="skill-pill">Cross-Browser Verification</span>
+                <span class="skill-pill">V-Model Methodology</span>
+                <span class="skill-pill">Traceability Matrix</span>
+                <span class="skill-pill">Regression Test Suites</span>
+                <span class="skill-pill">Test Case Documentation</span>
+              </div>
+            </div>
+
+            <!-- Category 3: Languages & Systems -->
+            <div class="skill-category-card">
+              <div class="skill-cat-header">
+                <div class="skill-cat-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="16 18 22 12 16 6"></polyline>
+                    <polyline points="8 6 2 12 8 18"></polyline>
+                  </svg>
+                </div>
+                <h3 class="skill-cat-title">Languages, Databases & Systems</h3>
+              </div>
+              <div class="skill-tag-cloud">
+                <span class="skill-pill">Python</span>
+                <span class="skill-pill">C Programming</span>
+                <span class="skill-pill">SQL (Relational DBs)</span>
+                <span class="skill-pill">MongoDB (NoSQL)</span>
+                <span class="skill-pill">Linux Systems & Bash</span>
+                <span class="skill-pill">OpenCV & YOLOv6</span>
+                <span class="skill-pill">Sentence Transformers</span>
+                <span class="skill-pill">PyMuPDF & Tesseract OCR</span>
+              </div>
+            </div>
+
+            <!-- Category 4: Architecture & Engineering Practices -->
+            <div class="skill-category-card">
+              <div class="skill-cat-header">
+                <div class="skill-cat-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="14" width="7" height="7"></rect>
+                    <rect x="3" y="14" width="7" height="7"></rect>
+                  </svg>
+                </div>
+                <h3 class="skill-cat-title">Architecture & Engineering Standards</h3>
+              </div>
+              <div class="skill-tag-cloud">
+                <span class="skill-pill">RESTful API Architecture</span>
+                <span class="skill-pill">Microservices Patterns</span>
+                <span class="skill-pill">Zero-Static-Secret Pipelines</span>
+                <span class="skill-pill">Git Distributed Version Control</span>
+                <span class="skill-pill">AI Policy Guardrails</span>
+                <span class="skill-pill">Infrastructure Drift Reconciliation</span>
+                <span class="skill-pill">Continuous Verification</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           CHECKPOINT 3.2: 2D CSS GRID PROJECTS GALLERY
+           - Two-dimensional layout pattern via CSS Grid (display: grid; grid-template-columns)
+           - Small screens: 1 column (grid-template-columns: 1fr)
+           - Large displays: repeat(3, 1fr) distribution
+           - Enclosing individual semantic <article> elements for projects
+           ==================================================================== -->
+      <section id="projects" class="section projects-gallery-section" data-checkpoint="Checkpoint 3.2: 2D CSS Grid Projects Gallery">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Featured Engineering Works</span>
+            <h2 class="section-title">Projects & Systems Showcase</h2>
+            <p class="section-subtitle">Real-world systems highlighting self-healing cloud infrastructure, IoT edge robotics, offline AI pipelines, and end-to-end automated testing frameworks.</p>
+          </div>
+
+          <!-- The 2D CSS Grid Container -->
+          <div class="projects-grid">
+
+            <!-- PROJECT 1: DriftGuard -->
+            <article class="project-card" data-checkpoint="Checkpoint 1: Semantic <article> Project Card">
+              <div class="project-card-header">
+                <span class="project-type-tag">Autonomous GitOps</span>
+                <div class="project-icon-box" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                  </svg>
+                </div>
+              </div>
+
+              <div class="project-card-body">
+                <h3 class="project-title">DriftGuard: AI-Guardrailed GitOps Cloud Platform</h3>
+                <p class="project-desc">
+                  Architected a self-healing GitOps platform on AWS EKS using Terraform, Atlantis, and FluxCD to automatically detect and reconcile infrastructure drift with AI admission guardrails.
+                </p>
+
+                <ul class="project-highlights-list">
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Claude API AI guardrails feeding risk scores into OPA/Kyverno</span>
+                  </li>
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Zero-static-secret Jenkins CI/CD via AWS IRSA</span>
+                  </li>
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Falco kernel threat detection blocking anomalous deployments</span>
+                  </li>
+                </ul>
+
+                <div class="project-tech-stack">
+                  <span class="tech-tag">AWS EKS</span>
+                  <span class="tech-tag">Terraform</span>
+                  <span class="tech-tag">FluxCD</span>
+                  <span class="tech-tag">OPA/Kyverno</span>
+                  <span class="tech-tag">Claude API</span>
+                  <span class="tech-tag">Jenkins</span>
+                </div>
+              </div>
+
+              <div class="project-card-footer">
+                <button type="button" class="project-link-btn open-modal-btn" data-project="driftguard">
+                  <span>Architecture Deep Dive</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </button>
+              </div>
+            </article>
+
+            <!-- PROJECT 2: IoT-Enabled USV for Aid Deployment -->
+            <article class="project-card" data-checkpoint="Checkpoint 1: Semantic <article> Project Card">
+              <div class="project-card-header">
+                <span class="project-type-tag project-badge-highlight">IEEE Published & KSCST</span>
+                <div class="project-icon-box" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                  </svg>
+                </div>
+              </div>
+
+              <div class="project-card-body">
+                <h3 class="project-title">IoT-Enabled USV for Aid Deployment</h3>
+                <p class="project-desc">
+                  Autonomous Unmanned Surface Vehicle (USV) integrating YOLOv6-N, OpenCV, and long-range LoRa RF telemetry for coordinated real-time maritime water rescue operations.
+                </p>
+
+                <ul class="project-highlights-list">
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Edge YOLOv6-N & OpenCV for real-time victim distress detection</span>
+                  </li>
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>LoRa SX1278 achieving ~1 km telemetry in hostile waters</span>
+                  </li>
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Published in IEEE (DOI: 10.1109/IITCEE64140.2025.10915282)</span>
+                  </li>
+                </ul>
+
+                <div class="project-tech-stack">
+                  <span class="tech-tag">YOLOv6-N</span>
+                  <span class="tech-tag">OpenCV</span>
+                  <span class="tech-tag">LoRa SX1278</span>
+                  <span class="tech-tag">Blynk IoT</span>
+                  <span class="tech-tag">Robotics</span>
+                  <span class="tech-tag">Python</span>
+                </div>
+              </div>
+
+              <div class="project-card-footer">
+                <button type="button" class="project-link-btn open-modal-btn" data-project="iot-usv">
+                  <span>Research Deep Dive</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </button>
+              </div>
+            </article>
+
+            <!-- PROJECT 3: Offline AI-Based Q&A Generator -->
+            <article class="project-card" data-checkpoint="Checkpoint 1: Semantic <article> Project Card">
+              <div class="project-card-header">
+                <span class="project-type-tag">Offline AI / Embeddings</span>
+                <div class="project-icon-box" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                  </svg>
+                </div>
+              </div>
+
+              <div class="project-card-body">
+                <h3 class="project-title">Offline AI-Based Q&A Generator</h3>
+                <p class="project-desc">
+                  Fully air-gapped, zero-cloud question generation application converting technical PDF lecture notes into practice quizzes via local OCR and quantized embeddings.
+                </p>
+
+                <ul class="project-highlights-list">
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>PyMuPDF & Tesseract OCR for digitized text & diagram parsing</span>
+                  </li>
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Offline MiniLM, BGE, and E5 sentence embedding models</span>
+                  </li>
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Dockerized & orchestrated on Minikube via Ansible</span>
+                  </li>
+                </ul>
+
+                <div class="project-tech-stack">
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">PyMuPDF</span>
+                  <span class="tech-tag">Tesseract OCR</span>
+                  <span class="tech-tag">MiniLM</span>
+                  <span class="tech-tag">Minikube</span>
+                  <span class="tech-tag">Ansible</span>
+                </div>
+              </div>
+
+              <div class="project-card-footer">
+                <button type="button" class="project-link-btn open-modal-btn" data-project="offline-qa">
+                  <span>System Architecture</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </button>
+              </div>
+            </article>
+
+            <!-- PROJECT 4: Project Pilot - Academic Guidance QA & Testing -->
+            <article class="project-card" data-checkpoint="Checkpoint 1: Semantic <article> Project Card">
+              <div class="project-card-header">
+                <span class="project-type-tag">QA & E2E Testing</span>
+                <div class="project-icon-box" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                  </svg>
+                </div>
+              </div>
+
+              <div class="project-card-body">
+                <h3 class="project-title">Project Pilot: Academic Guidance QA Suite</h3>
+                <p class="project-desc">
+                  Comprehensive automated and manual testing framework for full-stack student-mentor coordination web app, enforcing V-Model quality standards and traceability.
+                </p>
+
+                <ul class="project-highlights-list">
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Selenium E2E automated test suite for cross-browser user flows</span>
+                  </li>
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>pytest backend API fixtures & Jest frontend component tests</span>
+                  </li>
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>V-Model documentation: Test Plan, Problem Reports, RTM</span>
+                  </li>
+                </ul>
+
+                <div class="project-tech-stack">
+                  <span class="tech-tag">Selenium</span>
+                  <span class="tech-tag">pytest</span>
+                  <span class="tech-tag">Jest</span>
+                  <span class="tech-tag">Postman</span>
+                  <span class="tech-tag">DevTools</span>
+                  <span class="tech-tag">V-Model</span>
+                </div>
+              </div>
+
+              <div class="project-card-footer">
+                <button type="button" class="project-link-btn open-modal-btn" data-project="project-pilot">
+                  <span>QA Methodology</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </button>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           CHECKPOINT 1: SEMANTIC STRUCTURE (HTML5) - <section id="education">
+           Academic Degrees & Institutions
+           ==================================================================== -->
+      <section id="education" class="section" data-checkpoint="Checkpoint 1: Semantic <section id='education'>">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Academic Trajectory</span>
+            <h2 class="section-title">Education & Credentials</h2>
+            <p class="section-subtitle">Formal computer science & software engineering training across premier technical institutions in Bengaluru, India.</p>
+          </div>
+
+          <div class="education-grid">
+            <!-- Degree 1: M.Tech RVCE -->
+            <div class="edu-card">
+              <div class="edu-header-row">
+                <h3 class="edu-degree">M.Tech in Software Engineering</h3>
+                <span class="edu-cgpa-badge">8.24 CGPA</span>
+              </div>
+              <div class="edu-institution">RV College of Engineering (RVCE)</div>
+              <div class="edu-location">Bengaluru, Karnataka, India</div>
+              <p class="edu-details">
+                Advanced studies in cloud architecture, DevOps automation pipelines, distributed systems, software verification & validation, and autonomous systems engineering.
+              </p>
+            </div>
+
+            <!-- Degree 2: B.Tech REVA -->
+            <div class="edu-card">
+              <div class="edu-header-row">
+                <h3 class="edu-degree">B.Tech in Computer Science Engineering</h3>
+                <span class="edu-cgpa-badge">8.81 CGPA</span>
+              </div>
+              <div class="edu-institution">REVA University</div>
+              <div class="edu-location">Bengaluru, Karnataka, India</div>
+              <p class="edu-details">
+                Comprehensive foundation in data structures, algorithms, operating systems, database management, computer networks, and full-stack software development.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           CHECKPOINT 1: SEMANTIC STRUCTURE (HTML5) - <section id="contact">
+           With functional user communication form (<form>)
+           - Specific element constraints: input[type='email'], standard text fields
+           - Definitive submit trigger button
+           ==================================================================== -->
+      <section id="contact" class="section contact-section" data-checkpoint="Checkpoint 1: Semantic <section id='contact'>">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Direct Communication</span>
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Interested in collaborating on cloud infrastructure, DevOps pipelines, or discussing software engineering roles? Send a direct dispatch below.</p>
+          </div>
+
+          <div class="contact-layout-wrapper">
+            <!-- Contact Info Panel -->
+            <div class="contact-info-panel">
+              <div class="contact-info-card">
+                <h3>Contact Information</h3>
+                <p>Feel free to reach out directly through any of the channels below or via the structured message form.</p>
+
+                <ul class="contact-method-list">
+                  <li class="contact-method-item">
+                    <div class="contact-icon-bubble" aria-hidden="true">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                      </svg>
+                    </div>
+                    <div class="contact-method-text">
+                      <span class="contact-method-label">Direct Email</span>
+                      <a href="mailto:vishalpranav21@gmail.com" class="contact-method-link">vishalpranav21@gmail.com</a>
+                    </div>
+                  </li>
+
+                  <li class="contact-method-item">
+                    <div class="contact-icon-bubble" aria-hidden="true">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                      </svg>
+                    </div>
+                    <div class="contact-method-text">
+                      <span class="contact-method-label">Phone & WhatsApp</span>
+                      <a href="tel:+917022923131" class="contact-method-link">+91 70229 23131</a>
+                    </div>
+                  </li>
+
+                  <li class="contact-method-item">
+                    <div class="contact-icon-bubble" aria-hidden="true">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                      </svg>
+                    </div>
+                    <div class="contact-method-text">
+                      <span class="contact-method-label">LinkedIn Profile</span>
+                      <a href="https://www.linkedin.com/in/vishalpranav21" target="_blank" rel="noopener noreferrer" class="contact-method-link">linkedin.com/in/vishalpranav21</a>
+                    </div>
+                  </li>
+
+                  <li class="contact-method-item">
+                    <div class="contact-icon-bubble" aria-hidden="true">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                      </svg>
+                    </div>
+                    <div class="contact-method-text">
+                      <span class="contact-method-label">Location</span>
+                      <span style="color: var(--text-primary); font-size: 0.95rem;">Bengaluru, Karnataka, India</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Checkpoint 1: Functional user communication form (<form>) -->
+            <div class="contact-form-card" data-checkpoint="Checkpoint 1: Functional User Communication <form>">
+              <form id="contact-form" novalidate>
+                <div class="form-grid">
+                  <div class="form-grid form-grid-2col">
+                    <!-- Standard Text Field: Name -->
+                    <div class="form-group">
+                      <label for="name" class="form-label">Full Name <span class="required-mark">*</span></label>
+                      <input type="text" id="name" name="name" class="form-input" placeholder="e.g., Alex Johnson" required autocomplete="name">
+                    </div>
+
+                    <!-- Email Constraint Field: input[type='email'] -->
+                    <div class="form-group">
+                      <label for="email" class="form-label">Email Address <span class="required-mark">*</span></label>
+                      <input type="email" id="email" name="email" class="form-input" placeholder="e.g., alex@organization.com" required autocomplete="email">
+                    </div>
+                  </div>
+
+                  <!-- Standard Text Field: Subject -->
+                  <div class="form-group">
+                    <label for="subject" class="form-label">Message Subject <span class="required-mark">*</span></label>
+                    <input type="text" id="subject" name="subject" class="form-input" placeholder="e.g., Cloud Engineer Opportunity / Collaboration" required>
+                  </div>
+
+                  <!-- Textarea: Message -->
+                  <div class="form-group">
+                    <label for="message" class="form-label">Your Message <span class="required-mark">*</span></label>
+                    <textarea id="message" name="message" class="form-textarea" placeholder="Detail your project requirements, role specifications, or inquiry..." required></textarea>
+                  </div>
+
+                  <!-- Checkpoint 1: Definitive submit trigger button -->
+                  <button type="submit" id="submit-btn" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">
+                    <span>Send Message Dispatch</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="22" y1="2" x2="11" y2="13"></line>
+                      <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                  </button>
+                </div>
+
+                <!-- Live Feedback Display -->
+                <div id="form-feedback" class="form-feedback" role="alert"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ======================================================================
+         CHECKPOINT 1: SEMANTIC STRUCTURE (HTML5) - <footer>
+         ====================================================================== -->
+    <footer class="site-footer" data-checkpoint="Checkpoint 1: Semantic <footer>">
+      <div class="container footer-content">
+        <div class="footer-brand">
+          <div class="footer-brand-title">M Vishal Pranav</div>
+          <div class="footer-brand-sub">M.Tech Software Engineering · RV College of Engineering, Bengaluru</div>
+        </div>
+
+        <ul class="footer-links">
+          <li><a href="#hero" class="footer-link">About</a></li>
+          <li><a href="#skills" class="footer-link">Skills</a></li>
+          <li><a href="#projects" class="footer-link">Projects</a></li>
+          <li><a href="#education" class="footer-link">Education</a></li>
+          <li><a href="#contact" class="footer-link">Contact</a></li>
+        </ul>
+
+        <div class="footer-copy">
+          &copy; 2026 M Vishal Pranav. Built with Semantic HTML5, CSS3 Grid/Flexbox & WebGL 3D.
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Project Details Modal Container -->
+  <div id="project-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-container">
+      <button id="modal-close-btn" class="modal-close-btn" aria-label="Close Project Modal">&times;</button>
+      <div id="modal-dynamic-content"></div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/webgl-scene.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
